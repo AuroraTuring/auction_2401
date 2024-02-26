@@ -29,20 +29,23 @@ RSpec.describe Auction do
     expect(@auction.item_names).to eq(["Chalkware Piggy Bank", "Bamboo Picture Frame"])
   end
 
-  it "can bid on items" do
+  it "can #add_bid on items" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
     @auction.add_item(@item4)
     @auction.add_item(@item5)
 
-    expect(@item1.bids).to eq([])
+    expect(@item1.bids).to eq({})
     @item1.add_bid(@attendee2, 20)
     @item1.add_bid(@attendee1, 22)
-    expect(@item1.bids).to eq([@attendee2, @attendee1])
+    expect(@item1.bids).to eq({
+          @attendee2 => 20,
+          @attendee1 => 22
+        })
   end
 
-  it "can check for current high bids" do
+  it "can check for #current_high_bid" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
@@ -55,7 +58,7 @@ RSpec.describe Auction do
     expect(@item1.current_high_bid).to eq(22)
   end
 
-  it "can check for unpopular items" do
+  it "can check for #unpopular_items" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
@@ -71,7 +74,7 @@ RSpec.describe Auction do
     expect(@auction.unpopular_items).to eq([@item2, @item5])
   end
 
-  it "can check for potentail revenue" do
+  it "can check for #potential_revenue" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
