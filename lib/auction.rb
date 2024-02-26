@@ -14,7 +14,7 @@ class Auction
     @items.map {|item| item.name}
   end
 
-  def add_bid(bid)
+  def add_bid(attendee, bid)
     @bids << bid
   end
 
