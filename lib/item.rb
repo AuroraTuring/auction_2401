@@ -1,8 +1,8 @@
 class Item
-  attr_reader :object
+  attr_reader :name
 
-  def initialize(object)
-    @object = object
+  def initialize(name)
+    @name = name
   end
 
 
