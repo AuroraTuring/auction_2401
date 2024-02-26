@@ -7,5 +7,4 @@ class Attendee
   end
 
 
-
 end

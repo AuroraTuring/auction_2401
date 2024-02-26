@@ -6,6 +6,4 @@ class Item
   end
 
 
-
-
 end
