@@ -43,7 +43,7 @@ RSpec.describe Auction do
       expect(@item1.bids).to eq([@attendee2, @attendee1])
     end
 
-    it "can check for high bids" do
+    it "can check for current high bids" do
       @auction.add_item(@item1)
       @auction.add_item(@item2)
       @auction.add_item(@item3)
