@@ -2,11 +2,11 @@
 
 ## Instructions
 
-* Fork this Repository (do not change the name of the fork)
+* Fork this Repository (do not change the name of the fork).
 * Clone your forked repo to your computer.
 * Complete the activity below.
-* Push your solution to your forked repo
-* Submit a pull request from your repository to this repository
+* Push your solution to your forked repo.
+* Submit a pull request from your repository to this repository.
   * Put your name in your PR title!
 
 ## Iteration 1 - Items, Attendees & Auctions
@@ -60,7 +60,7 @@ pry(main)> auction.item_names
 
 Use TDD to update your classes to respond to the following interaction pattern.  Some notes:
 - `unpopular_items` are those items which have no bids.
-- `potential_revenue` is the total possible sale price of the items (the items highest bid)
+- `potential_revenue` is the total possible sale price of the items (the items highest bid).
 
 ```ruby
 pry(main)> require './lib/item'
@@ -73,28 +73,28 @@ pry(main)> require './lib/attendee'
 #=> true
 
 pry(main)> item1 = Item.new('Chalkware Piggy Bank')
-#=> #<Item:0x00007fdc07956ab0 @bids={}, @name="Chalkware Piggy Bank">
+#=> #<Item:ITEM1 @bids={}, @name="Chalkware Piggy Bank">
 
 pry(main)> item2 = Item.new('Bamboo Picture Frame')
-#=> #<Item:0x00007fdc07925280 @bids={}, @name="Bamboo Picture Frame">
+#=> #<Item:ITEM2 @bids={}, @name="Bamboo Picture Frame">
 
 pry(main)> item3 = Item.new('Homemade Chocolate Chip Cookies')
-#=> #<Item:0x00007fdc071ab040 @bids={}, @name="Homemade Chocolate Chip Cookies">
+#=> #<Item:ITEM3 @bids={}, @name="Homemade Chocolate Chip Cookies">
 
 pry(main)> item4 = Item.new('2 Days Dogsitting')
-#=> #<Item:0x00007fdc088fb6f0 @bids={}, @name="2 Days Dogsitting">
+#=> #<Item:ITEM4 @bids={}, @name="2 Days Dogsitting">
 
 pry(main)> item5 = Item.new('Forever Stamps')
-#=> #<Item:0x00007fdc071695f0 @bids={}, @name="Forever Stamps">
+#=> #<Item:ITEM5 @bids={}, @name="Forever Stamps">
 
 pry(main)> attendee1 = Attendee.new({name: 'Megan', budget: '$50'})
-#=> #<Attendee:0x00007fdc088f0e08 @budget=50, @name="Megan">
+#=> #<Attendee:ATTENDEE1 @budget=50, @name="Megan">
 
 pry(main)> attendee2 = Attendee.new({name: 'Bob', budget: '$75'})
-#=> #<Attendee:0x00007fdc071131c8 @budget=75, @name="Bob">
+#=> #<Attendee:ATTENDEE2 @budget=75, @name="Bob">
 
 pry(main)> attendee3 = Attendee.new({name: 'Mike', budget: '$100'})
-#=> #<Attendee:0x00007fdc070e2190 @budget=100, @name="Mike">
+#=> #<Attendee:ATTENDEE3 @budget=100, @name="Mike">
 
 pry(main)> auction = Auction.new
 #=> #<Auction:0x00007fdc0799de60 @items=[]>
@@ -118,8 +118,8 @@ pry(main)> item1.add_bid(attendee1, 22)
 
 pry(main)> item1.bids
 #=> {
-#     #<Attendee:0x00007fdc071131c8 ...> => 20,
-#     #<Attendee:0x00007fdc088f0e08 ...> => 22
+#     #<Attendee:ATTENDEE2 ...> => 20,
+#     #<Attendee:ATTENDEE1 ...> => 22
 #   }
 
 pry(main)> item1.current_high_bid
@@ -128,12 +128,12 @@ pry(main)> item1.current_high_bid
 pry(main)> item4.add_bid(attendee3, 50)
 
 pry(main)> auction.unpopular_items
-#=> [#<Item:0x00007fdc07925280 ...>, #<Item:0x00007fdc071ab040 ...>, #<Item:0x00007fdc071695f0 ...>]
+#=> [#<Item:ITEM2 ...>, #<Item:ITEM3 ...>, #<Item:ITEM5 ...>]
 
 pry(main)> item3.add_bid(attendee2, 15)
 
 pry(main)> auction.unpopular_items
-#=> [#<Item:0x00007fdc07925280 ...>, #<Item:0x00007fdc071695f0 ...>]
+#=> [#<Item:ITEM2 ...>, #<Item:ITEM5 ...>]
 
 pry(main)> auction.potential_revenue
 #=> 87
@@ -146,7 +146,7 @@ Use TDD to update your classes to include the following functionality. You must 
 
 Some notes:
 - `bidder_info` should return a hash with keys that are attendees, and values that are a hash with that attendee's budget and an array of items that attendee has bid on.
-- `close_bidding` should update the item so that it will not accept additional bids
+- `close_bidding` should update the item so that it will not accept additional bids.
 
 | Method Name | Return Value |
 | ----------- | ------------ |
