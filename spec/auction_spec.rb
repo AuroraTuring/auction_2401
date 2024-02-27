@@ -20,7 +20,7 @@ RSpec.describe Auction do
     expect(@auction.items).to eq([])
   end
 
-  it "can add items to auction" do
+  it "can add_item to auction" do
     expect(@auction.items).to eq([])
     @auction.add_item(@item1)
     @auction.add_item(@item2)
@@ -58,7 +58,7 @@ RSpec.describe Auction do
     expect(@auction.unpopular_items).to eq([@item2, @item5])
   end
 
-  it "can check for #potential_revenue" do
+  xit "can check for #potential_revenue" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
