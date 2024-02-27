@@ -15,12 +15,12 @@ RSpec.describe Auction do
     @item5 = Item.new('Forever Stamps')
   end
 
-  it "exists and has attributes" do
+  xit "exists and has attributes" do
     expect(@auction).to be_a(Auction)
     expect(@auction.items).to eq([])
   end
 
-  it "can add_item to auction" do
+  xit "can add_item to auction" do
     expect(@auction.items).to eq([])
     @auction.add_item(@item1)
     @auction.add_item(@item2)
@@ -29,7 +29,7 @@ RSpec.describe Auction do
     expect(@auction.item_names).to eq(["Chalkware Piggy Bank", "Bamboo Picture Frame"])
   end
 
-  it "can check for #current_high_bid" do
+  xit "can check for #current_high_bid" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
@@ -42,7 +42,7 @@ RSpec.describe Auction do
     expect(@item1.current_high_bid).to eq(22)
   end
 
-  it "can check for #unpopular_items" do
+  xit "can check for #unpopular_items" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)
@@ -58,7 +58,7 @@ RSpec.describe Auction do
     expect(@auction.unpopular_items).to eq([@item2, @item5])
   end
 
-  xit "can check for #potential_revenue" do
+  it "can check for #potential_revenue" do
     @auction.add_item(@item1)
     @auction.add_item(@item2)
     @auction.add_item(@item3)

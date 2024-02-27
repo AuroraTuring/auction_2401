@@ -21,8 +21,12 @@ class Auction
       end
     end
     no_bids
+  end
 
-
+  def potential_revenue
+    @items.each do |item|
+      item.bids.values.sort.first
+    end
   end
 
 
